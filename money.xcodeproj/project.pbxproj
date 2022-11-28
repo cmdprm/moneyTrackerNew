@@ -7,23 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1FFD1E2930D13800D9435B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FFD1D2930D13800D9435B /* AccountViewController.swift */; };
+		CE1FFD202930D18600D9435B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FFD1F2930D18600D9435B /* Account.swift */; };
+		CE1FFD222930D1A200D9435B /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FFD212930D1A200D9435B /* AccountData.swift */; };
+		CE8FE52229318053007ADA6B /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FE52029318053007ADA6B /* AccountTableViewCell.swift */; };
+		CE8FE52329318053007ADA6B /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8FE52129318053007ADA6B /* AccountTableViewCell.xib */; };
+		CE8FE525293183AC007ADA6B /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FE524293183AC007ADA6B /* AccountDetailViewController.swift */; };
+		CE8FE52729319485007ADA6B /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FE52629319485007ADA6B /* EditAccountViewController.swift */; };
+		CEBFAA312930CE4F003D0162 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAA302930CE4F003D0162 /* Operation.swift */; };
+		CEBFAA332930CEF4003D0162 /* OperationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAA322930CEF4003D0162 /* OperationData.swift */; };
+		CEC41663293421CF006AD353 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC41662293421CF006AD353 /* AddAccountViewController.swift */; };
 		CECD00242930257D002D610A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD00232930257D002D610A /* AppDelegate.swift */; };
 		CECD00262930257D002D610A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD00252930257D002D610A /* SceneDelegate.swift */; };
-		CECD00282930257D002D610A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD00272930257D002D610A /* ViewController.swift */; };
+		CECD00282930257D002D610A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD00272930257D002D610A /* MainViewController.swift */; };
 		CECD002B2930257D002D610A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECD00292930257D002D610A /* Main.storyboard */; };
 		CECD002D2930257E002D610A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECD002C2930257E002D610A /* Assets.xcassets */; };
 		CECD00302930257E002D610A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECD002E2930257E002D610A /* LaunchScreen.storyboard */; };
+		CEFF2BA429342DFD008C3D1E /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF2BA229342DFD008C3D1E /* OperationTableViewCell.swift */; };
+		CEFF2BA529342DFD008C3D1E /* OperationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFF2BA329342DFD008C3D1E /* OperationTableViewCell.xib */; };
+		CEFF2BA729343018008C3D1E /* OperationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF2BA629343018008C3D1E /* OperationsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1FFD1D2930D13800D9435B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		CE1FFD1F2930D18600D9435B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CE1FFD212930D1A200D9435B /* AccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
+		CE8FE52029318053007ADA6B /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		CE8FE52129318053007ADA6B /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		CE8FE524293183AC007ADA6B /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
+		CE8FE52629319485007ADA6B /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
+		CEBFAA302930CE4F003D0162 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		CEBFAA322930CEF4003D0162 /* OperationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationData.swift; sourceTree = "<group>"; };
+		CEC41662293421CF006AD353 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		CECD00202930257D002D610A /* money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = money.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECD00232930257D002D610A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECD00252930257D002D610A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CECD00272930257D002D610A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CECD00272930257D002D610A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CECD002A2930257D002D610A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CECD002C2930257E002D610A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECD002F2930257E002D610A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECD00312930257E002D610A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEFF2BA229342DFD008C3D1E /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
+		CEFF2BA329342DFD008C3D1E /* OperationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationTableViewCell.xib; sourceTree = "<group>"; };
+		CEFF2BA629343018008C3D1E /* OperationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +63,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE13D2B829342A8100582D11 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				CE1FFD1F2930D18600D9435B /* Account.swift */,
+				CE1FFD212930D1A200D9435B /* AccountData.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		CE13D2BD29342B5900582D11 /* Operation Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF2BA229342DFD008C3D1E /* OperationTableViewCell.swift */,
+				CEFF2BA329342DFD008C3D1E /* OperationTableViewCell.xib */,
+			);
+			path = "Operation Cell";
+			sourceTree = "<group>";
+		};
+		CE8FE51E2931802E007ADA6B /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FE51F29318036007ADA6B /* Account Cell */,
+				CE13D2BD29342B5900582D11 /* Operation Cell */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		CE8FE51F29318036007ADA6B /* Account Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FE52029318053007ADA6B /* AccountTableViewCell.swift */,
+				CE8FE52129318053007ADA6B /* AccountTableViewCell.xib */,
+			);
+			path = "Account Cell";
+			sourceTree = "<group>";
+		};
+		CEC41661293421B7006AD353 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				CE1FFD1D2930D13800D9435B /* AccountViewController.swift */,
+				CE8FE524293183AC007ADA6B /* AccountDetailViewController.swift */,
+				CE8FE52629319485007ADA6B /* EditAccountViewController.swift */,
+				CEC41662293421CF006AD353 /* AddAccountViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		CECD00172930257D002D610A = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +131,43 @@
 			children = (
 				CECD00232930257D002D610A /* AppDelegate.swift */,
 				CECD00252930257D002D610A /* SceneDelegate.swift */,
-				CECD00272930257D002D610A /* ViewController.swift */,
-				CECD00292930257D002D610A /* Main.storyboard */,
+				CECD00392930277A002D610A /* Model */,
+				CECD00372930276B002D610A /* Controller */,
+				CECD003829302772002D610A /* View */,
 				CECD002C2930257E002D610A /* Assets.xcassets */,
 				CECD002E2930257E002D610A /* LaunchScreen.storyboard */,
 				CECD00312930257E002D610A /* Info.plist */,
 			);
 			path = money;
+			sourceTree = "<group>";
+		};
+		CECD00372930276B002D610A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CECD00272930257D002D610A /* MainViewController.swift */,
+				CEFF2BA629343018008C3D1E /* OperationsViewController.swift */,
+				CEC41661293421B7006AD353 /* Account */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CECD003829302772002D610A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FE51E2931802E007ADA6B /* XIB */,
+				CECD00292930257D002D610A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CECD00392930277A002D610A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEBFAA302930CE4F003D0162 /* Operation.swift */,
+				CEBFAA322930CEF4003D0162 /* OperationData.swift */,
+				CE13D2B829342A8100582D11 /* Account */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +228,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFF2BA529342DFD008C3D1E /* OperationTableViewCell.xib in Resources */,
 				CECD00302930257E002D610A /* LaunchScreen.storyboard in Resources */,
+				CE8FE52329318053007ADA6B /* AccountTableViewCell.xib in Resources */,
 				CECD002D2930257E002D610A /* Assets.xcassets in Resources */,
 				CECD002B2930257D002D610A /* Main.storyboard in Resources */,
 			);
@@ -138,9 +243,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECD00282930257D002D610A /* ViewController.swift in Sources */,
+				CECD00282930257D002D610A /* MainViewController.swift in Sources */,
+				CE8FE525293183AC007ADA6B /* AccountDetailViewController.swift in Sources */,
 				CECD00242930257D002D610A /* AppDelegate.swift in Sources */,
+				CE1FFD1E2930D13800D9435B /* AccountViewController.swift in Sources */,
+				CE1FFD222930D1A200D9435B /* AccountData.swift in Sources */,
+				CE8FE52729319485007ADA6B /* EditAccountViewController.swift in Sources */,
+				CEFF2BA429342DFD008C3D1E /* OperationTableViewCell.swift in Sources */,
+				CEBFAA332930CEF4003D0162 /* OperationData.swift in Sources */,
 				CECD00262930257D002D610A /* SceneDelegate.swift in Sources */,
+				CE8FE52229318053007ADA6B /* AccountTableViewCell.swift in Sources */,
+				CEBFAA312930CE4F003D0162 /* Operation.swift in Sources */,
+				CEC41663293421CF006AD353 /* AddAccountViewController.swift in Sources */,
+				CEFF2BA729343018008C3D1E /* OperationsViewController.swift in Sources */,
+				CE1FFD202930D18600D9435B /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,11 +406,15 @@
 				DEVELOPMENT_TEAM = W4T587833Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = money/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Money Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,11 +438,15 @@
 				DEVELOPMENT_TEAM = W4T587833Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = money/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Money Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
