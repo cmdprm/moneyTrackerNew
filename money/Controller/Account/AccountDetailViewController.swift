@@ -60,7 +60,7 @@ class AccountDetailViewController: UIViewController {
         title = "\(account.name) Detail"
         
         nameLabel.text = "\(account.name) Account"
-        balanceLabel.text = "\(account.balance)$"
+        balanceLabel.text = "\(account.balance)\(currency)"
         
         if account.isMain == true {
             statusLabel.text = "Primary Account"
@@ -83,7 +83,7 @@ class AccountDetailViewController: UIViewController {
         title = "\(account.name) Detail"
         
         nameLabel.text = "\(account.name) Account"
-        balanceLabel.text = "\(account.balance)$"
+        balanceLabel.text = "\(account.balance)\(currency)"
         
         if account.isMain == true {
             statusLabel.text = "Primary Account"

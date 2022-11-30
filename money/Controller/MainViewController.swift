@@ -20,7 +20,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lastOperationView: UIView!
     @IBOutlet weak var lastOperationButton: UIButton!
     
-    @IBOutlet weak var operationLabel: UILabel!
+    @IBOutlet weak var operationNameLabel: UILabel!
+    @IBOutlet weak var operationBalanceLabel: UILabel!
     
     /// Income Properties
     @IBOutlet weak var incomeView: UIView!
@@ -57,7 +58,7 @@ class MainViewController: UIViewController {
         }
         
         accountNameLabel.text = "\(primaryAccount.name) Account"
-        accountAmountLabel.text = "\(primaryAccount.balance)$"
+        accountAmountLabel.text = "\(primaryAccount.balance)\(currency)"
         
         /// Operation Setup
         lastOperationView.layer.cornerRadius = lastOperationView.frame.height / 8
@@ -71,7 +72,15 @@ class MainViewController: UIViewController {
         
         let lastOperation = operations[0]
         
-        operationLabel.text = "\(lastOperation.title): \(lastOperation.amount)$"
+        operationNameLabel.text = "\(lastOperation.title)"
+        
+        if lastOperation.status == 0 {
+            operationBalanceLabel.textColor = UIColor(red: 0.85, green: 0.26, blue: 0.08, alpha: 1.00)
+            operationBalanceLabel.text = "-\(lastOperation.amount)\(currency)"
+        } else {
+            operationBalanceLabel.textColor = UIColor(red: 0.18, green: 0.49, blue: 0.20, alpha: 1.00)
+            operationBalanceLabel.text = "+\(lastOperation.amount)\(currency)"
+        }
         
         /// Income Setup
         incomeView.layer.cornerRadius = incomeView.frame.height / 8
@@ -106,6 +115,8 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        /// Account
         var primaryAccount = accounts[0]
         
         for account in accounts {
@@ -115,7 +126,20 @@ class MainViewController: UIViewController {
         }
         
         accountNameLabel.text = "\(primaryAccount.name) Account"
-        accountAmountLabel.text = "\(primaryAccount.balance)$"
+        accountAmountLabel.text = "\(primaryAccount.balance)\(currency)"
+        
+        /// LastOperation
+        let lastOperation = operations[0]
+        
+        operationNameLabel.text = "\(lastOperation.title)"
+        
+        if lastOperation.status == 0 {
+            operationBalanceLabel.textColor = UIColor(red: 0.85, green: 0.26, blue: 0.08, alpha: 1.00)
+            operationBalanceLabel.text = "-\(lastOperation.amount)\(currency)"
+        } else {
+            operationBalanceLabel.textColor = UIColor(red: 0.18, green: 0.49, blue: 0.20, alpha: 1.00)
+            operationBalanceLabel.text = "+\(lastOperation.amount)\(currency)"
+        }
     }
 
     /// Account Actions
@@ -128,6 +152,16 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "Operations", sender: self)
     }
     
-
+    @IBAction func incomePressed(_ sender: Any) {
+        performSegue(withIdentifier: "Income", sender: self)
+    }
+    
+    @IBAction func wastePressed(_ sender: Any) {
+        performSegue(withIdentifier: "Waste", sender: self)
+    }
+    
+    @IBAction func settingsPressed(_ sender: Any) {
+        performSegue(withIdentifier: "Settings", sender: self)
+    }
 }
 

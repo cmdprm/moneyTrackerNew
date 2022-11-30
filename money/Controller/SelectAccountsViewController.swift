@@ -1,59 +1,40 @@
 //
-//  AccountViewController.swift
+//  IncomeAccountsViewController.swift
 //  money
 //
-//  Created by User on 25.11.2022.
+//  Created by User on 29.11.2022.
 //
 
 import UIKit
 
-class AccountViewController: UIViewController {
+protocol AccountPassingDelegate {
+    func sendAccount(account: Account, index: Int)
+}
+
+class SelectAccountsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var addNewView: UIView!
-    @IBOutlet weak var addNewButton: UIButton!
-    
-    var selIndexOfAccount: Int = 0
+    var delegate: AccountPassingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        addNewView.layer.cornerRadius = 15
-        
-        addNewButton.layer.cornerRadius = 15
-        addNewButton.setTitle("", for: .normal)
 
         tableView.register(UINib(nibName: "AccountTableViewCell", bundle: nil), forCellReuseIdentifier: "AccountReusableCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AccountDetail" {
-            let acDetailVC = segue.destination as! AccountDetailViewController
-            acDetailVC.indexOfAccount = self.selIndexOfAccount
-        }
-    }
-    
-    @IBAction func addNewButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "AddAccount", sender: self)
-    }
-    
+
 }
 
-extension AccountViewController: UITableViewDelegate {
+extension SelectAccountsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selIndexOfAccount = indexPath.row
-        performSegue(withIdentifier: "AccountDetail", sender: self)
+        self.delegate?.sendAccount(account: accounts[indexPath.row], index: indexPath.row)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
-extension AccountViewController: UITableViewDataSource {
+extension SelectAccountsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return accounts.count

@@ -10,8 +10,9 @@ import Foundation
 struct Operation {
     let id = UUID()
     let title: String
-    let category: String
+    let category: Category
     let date: Date
     let amount: Float
     let status: Int
+    let account: String
 }
