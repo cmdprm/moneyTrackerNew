@@ -7,12 +7,19 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class CategoryViewController: UIViewController, SelectIconDelegate, SelectColorDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     
-    @IBOutlet weak var iconCollectionView: UICollectionView!
-    @IBOutlet weak var colorCollectionView: UICollectionView!
+    @IBOutlet weak var iconView: UIView!
+    @IBOutlet weak var iconButton: UIButton!
+    @IBOutlet weak var iconLabel: UILabel!
+    @IBOutlet weak var iconImage: UIImageView!
+    
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var colorButton: UIButton!
+    @IBOutlet weak var colorLabel: UILabel!
+    @IBOutlet weak var selColorView: UIView!
     
     @IBOutlet weak var incomeView: UIView!
     @IBOutlet weak var incomeButton: UIButton!
@@ -23,38 +30,6 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
-    let icons = ["gamecontroller.fill", "car.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill", "lightbulb.fill"]
-    
-    let colors = [
-        UIColor(red: 0.40, green: 0.73, blue: 0.42, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.65, blue: 0.60, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00),
-        UIColor(red: 0.15, green: 0.78, blue: 0.85, alpha: 1.00)
-    ]
-    
     var iconIndex: Int?
     var colorIndex: Int?
     
@@ -63,6 +38,27 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        iconView.layer.cornerRadius = 15
+        
+        iconButton.layer.cornerRadius = 15
+        iconButton.setTitle("", for: .normal)
+        
+        if iconIndex == nil {
+            iconImage.isHidden = true
+        }
+        
+        colorView.layer.cornerRadius = 15
+        
+        colorButton.layer.cornerRadius = 15
+        colorButton.setTitle("", for: .normal)
+        
+        selColorView.layer.cornerRadius = selColorView.layer.bounds.width / 2
+        selColorView.clipsToBounds = true
+        
+        if colorIndex == nil {
+            selColorView.isHidden = true
+        }
         
         incomeView.layer.cornerRadius = 15
         
@@ -78,18 +74,44 @@ class CategoryViewController: UIViewController {
         
         saveButton.layer.cornerRadius = 15
         saveButton.setTitle("", for: .normal)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if iconIndex != nil {
+            iconLabel.text = "Selected Icon:"
+            iconImage.isHidden = false
+            iconImage.image = UIImage(systemName: icons[iconIndex!])
+        }
         
-        iconCollectionView.register(UINib(nibName: "IconCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "IconReusableCell")
-        iconCollectionView.delegate = self
-        iconCollectionView.dataSource = self
-        
-        colorCollectionView.register(UINib(nibName: "ColorCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ColorReusableCell")
-        colorCollectionView.delegate = self
-        colorCollectionView.dataSource = self
+        if colorIndex != nil {
+            colorLabel.text = "Selected Color:"
+            selColorView.isHidden = false
+            selColorView.backgroundColor = colors[colorIndex!]
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         nameField.resignFirstResponder()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SelectIcon" {
+            let VC = segue.destination as! SelectIconViewController
+            VC.delegate = self
+        }
+        
+        if segue.identifier == "SelectColor" {
+            let VC = segue.destination as! SelectColorViewController
+            VC.delegate = self
+        }
+    }
+    
+    func transferIconIndex(index: Int) {
+        self.iconIndex = index
+    }
+    
+    func transferColorIndex(index: Int) {
+        self.colorIndex = index
     }
     
     func getWarningAlert(message: String) -> UIAlertController {
@@ -100,6 +122,14 @@ class CategoryViewController: UIViewController {
         return alert
     }
 
+    @IBAction func iconPressed(_ sender: Any) {
+        performSegue(withIdentifier: "SelectIcon", sender: self)
+    }
+    
+    @IBAction func colorPressed(_ sender: Any) {
+        performSegue(withIdentifier: "SelectColor", sender: self)
+    }
+    
     @IBAction func incomePressed(_ sender: Any) {
         incomeView.backgroundColor = UIColor(red: 0.88, green: 0.88, blue: 0.88, alpha: 1.00)
         isIncomeSelected = true
@@ -165,64 +195,4 @@ class CategoryViewController: UIViewController {
         
     }
     
-}
-
-extension CategoryViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if collectionView == iconCollectionView {
-            self.iconIndex = indexPath.row
-            iconCollectionView.reloadData()
-        } else {
-            self.colorIndex = indexPath.row
-            colorCollectionView.reloadData()
-        }
-        
-    }
-}
-
-extension CategoryViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if collectionView == iconCollectionView {
-            return icons.count
-        } else {
-            return colors.count
-        }
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if collectionView == iconCollectionView {
-            
-            let cell = iconCollectionView.dequeueReusableCell(withReuseIdentifier: "IconReusableCell", for: indexPath) as! IconCollectionViewCell
-            
-            cell.iconView.backgroundColor = UIColor(red: 0.88, green: 0.88, blue: 0.88, alpha: 1.00)
-            cell.iconImage.tintColor = .black
-            cell.iconImage.image = UIImage(systemName: icons[indexPath.row])
-            
-            if self.iconIndex == indexPath.row {
-                cell.iconView.backgroundColor = UIColor(red: 0.46, green: 0.46, blue: 0.46, alpha: 1.00)
-                cell.iconImage.tintColor = .white
-            }
-            
-            return cell
-            
-        } else {
-            
-            let cell = colorCollectionView.dequeueReusableCell(withReuseIdentifier: "ColorReusableCell", for: indexPath) as! ColorCollectionViewCell
-            
-            cell.colorView.backgroundColor = colors[indexPath.row]
-            cell.colorView.layer.borderWidth = 0
-            
-            if self.colorIndex == indexPath.row {
-                cell.colorView.layer.borderWidth = 4
-            }
-            
-            return cell
-            
-        }
-        
-    }
 }

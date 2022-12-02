@@ -19,6 +19,9 @@
 		CEABBC832936C9090097C60D /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBC822936C9090097C60D /* CurrencyViewController.swift */; };
 		CEBFAA312930CE4F003D0162 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAA302930CE4F003D0162 /* Operation.swift */; };
 		CEBFAA332930CEF4003D0162 /* OperationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAA322930CEF4003D0162 /* OperationData.swift */; };
+		CEC3656A293ABD3500F2A646 /* NewCategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC36569293ABD3500F2A646 /* NewCategoryData.swift */; };
+		CEC3656C293ABE1F00F2A646 /* SelectIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3656B293ABE1F00F2A646 /* SelectIconViewController.swift */; };
+		CEC3656E293AC42800F2A646 /* SelectColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3656D293AC42800F2A646 /* SelectColorViewController.swift */; };
 		CEC41663293421CF006AD353 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC41662293421CF006AD353 /* AddAccountViewController.swift */; };
 		CEC5133B2938B19C00305FE0 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC513392938B19C00305FE0 /* ColorCollectionViewCell.swift */; };
 		CEC5133C2938B19C00305FE0 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5133A2938B19C00305FE0 /* ColorCollectionViewCell.xib */; };
@@ -57,6 +60,9 @@
 		CEABBC822936C9090097C60D /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		CEBFAA302930CE4F003D0162 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		CEBFAA322930CEF4003D0162 /* OperationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationData.swift; sourceTree = "<group>"; };
+		CEC36569293ABD3500F2A646 /* NewCategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryData.swift; sourceTree = "<group>"; };
+		CEC3656B293ABE1F00F2A646 /* SelectIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIconViewController.swift; sourceTree = "<group>"; };
+		CEC3656D293AC42800F2A646 /* SelectColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorViewController.swift; sourceTree = "<group>"; };
 		CEC41662293421CF006AD353 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		CEC513392938B19C00305FE0 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEC5133A2938B19C00305FE0 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -223,6 +229,7 @@
 				CEABBC7B293641C70097C60D /* Category */,
 				CEFEC2E62935786E0036EFE1 /* Operation */,
 				CE13D2B829342A8100582D11 /* Account */,
+				CEC36569293ABD3500F2A646 /* NewCategoryData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +258,8 @@
 				CEABBC802936C1F80097C60D /* SettingsViewController.swift */,
 				CEABBC822936C9090097C60D /* CurrencyViewController.swift */,
 				CEECAAB629380E5600EB7C6C /* CategoryViewController.swift */,
+				CEC3656B293ABE1F00F2A646 /* SelectIconViewController.swift */,
+				CEC3656D293AC42800F2A646 /* SelectColorViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -362,8 +371,10 @@
 				CECD00282930257D002D610A /* MainViewController.swift in Sources */,
 				CEFF2BA929343BB0008C3D1E /* OperationDetailViewController.swift in Sources */,
 				CE8FE525293183AC007ADA6B /* AccountDetailViewController.swift in Sources */,
+				CEC3656E293AC42800F2A646 /* SelectColorViewController.swift in Sources */,
 				CEECAAB5293808AE00EB7C6C /* AccountCounter.swift in Sources */,
 				CECD00242930257D002D610A /* AppDelegate.swift in Sources */,
+				CEC3656C293ABE1F00F2A646 /* SelectIconViewController.swift in Sources */,
 				CE1FFD1E2930D13800D9435B /* AccountViewController.swift in Sources */,
 				CEFEC2E5293577EE0036EFE1 /* Category.swift in Sources */,
 				CEFEC2E329356F850036EFE1 /* SelectAccountsViewController.swift in Sources */,
@@ -372,6 +383,7 @@
 				CEFEC2E82935787E0036EFE1 /* CategoryData.swift in Sources */,
 				CEFF2BA429342DFD008C3D1E /* OperationTableViewCell.swift in Sources */,
 				CEBFAA332930CEF4003D0162 /* OperationData.swift in Sources */,
+				CEC3656A293ABD3500F2A646 /* NewCategoryData.swift in Sources */,
 				CEABBC812936C1F80097C60D /* SettingsViewController.swift in Sources */,
 				CEC5133B2938B19C00305FE0 /* ColorCollectionViewCell.swift in Sources */,
 				CECD00262930257D002D610A /* SceneDelegate.swift in Sources */,
