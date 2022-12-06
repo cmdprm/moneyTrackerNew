@@ -23,8 +23,13 @@ class OperationTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         backView.layer.cornerRadius = 10
+        backView.backgroundColor = UIColor(named: "Color 1")
+        
         iconView.layer.cornerRadius = iconView.layer.bounds.height / 2
         iconView.clipsToBounds = true
+        
+        categoryLabel.textColor = UIColor(named: "Color 2")
+        dateLabel.textColor = UIColor(named: "Color 2")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

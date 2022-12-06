@@ -9,7 +9,7 @@ import UIKit
 
 struct Category {
     let id = UUID()
-    let name: String
+    var name: String
     let title: String
     let icon: String
     let color: UIColor

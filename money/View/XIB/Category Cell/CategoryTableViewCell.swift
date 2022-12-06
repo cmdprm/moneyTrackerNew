@@ -9,6 +9,7 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -20,6 +21,8 @@ class CategoryTableViewCell: UITableViewCell {
         
         iconView.layer.cornerRadius = iconView.layer.bounds.height / 2
         iconView.clipsToBounds = true
+
+        categoryView.backgroundColor = UIColor(named: "Color 1")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

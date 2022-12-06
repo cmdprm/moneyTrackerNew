@@ -10,6 +10,9 @@
 		CE1FFD1E2930D13800D9435B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FFD1D2930D13800D9435B /* AccountViewController.swift */; };
 		CE1FFD202930D18600D9435B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FFD1F2930D18600D9435B /* Account.swift */; };
 		CE1FFD222930D1A200D9435B /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FFD212930D1A200D9435B /* AccountData.swift */; };
+		CE5FE58E293D54D000BD5E72 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5FE58D293D54D000BD5E72 /* CategoriesViewController.swift */; };
+		CE5FE590293D689F00BD5E72 /* IncomeCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5FE58F293D689F00BD5E72 /* IncomeCategoriesViewController.swift */; };
+		CE5FE592293D6C5200BD5E72 /* WasteCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5FE591293D6C5200BD5E72 /* WasteCategoriesViewController.swift */; };
 		CE8FE52229318053007ADA6B /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FE52029318053007ADA6B /* AccountTableViewCell.swift */; };
 		CE8FE52329318053007ADA6B /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8FE52129318053007ADA6B /* AccountTableViewCell.xib */; };
 		CE8FE525293183AC007ADA6B /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FE524293183AC007ADA6B /* AccountDetailViewController.swift */; };
@@ -23,6 +26,8 @@
 		CEC3656C293ABE1F00F2A646 /* SelectIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3656B293ABE1F00F2A646 /* SelectIconViewController.swift */; };
 		CEC3656E293AC42800F2A646 /* SelectColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3656D293AC42800F2A646 /* SelectColorViewController.swift */; };
 		CEC41663293421CF006AD353 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC41662293421CF006AD353 /* AddAccountViewController.swift */; };
+		CEC43EA4293DEF7B00847B56 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC43EA3293DEF7B00847B56 /* CategoryDetailViewController.swift */; };
+		CEC43EA6293DFA7B00847B56 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC43EA5293DFA7B00847B56 /* EditCategoryViewController.swift */; };
 		CEC5133B2938B19C00305FE0 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC513392938B19C00305FE0 /* ColorCollectionViewCell.swift */; };
 		CEC5133C2938B19C00305FE0 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5133A2938B19C00305FE0 /* ColorCollectionViewCell.xib */; };
 		CECD00242930257D002D610A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD00232930257D002D610A /* AppDelegate.swift */; };
@@ -51,6 +56,9 @@
 		CE1FFD1D2930D13800D9435B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		CE1FFD1F2930D18600D9435B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CE1FFD212930D1A200D9435B /* AccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
+		CE5FE58D293D54D000BD5E72 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		CE5FE58F293D689F00BD5E72 /* IncomeCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCategoriesViewController.swift; sourceTree = "<group>"; };
+		CE5FE591293D6C5200BD5E72 /* WasteCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteCategoriesViewController.swift; sourceTree = "<group>"; };
 		CE8FE52029318053007ADA6B /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		CE8FE52129318053007ADA6B /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		CE8FE524293183AC007ADA6B /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +72,8 @@
 		CEC3656B293ABE1F00F2A646 /* SelectIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIconViewController.swift; sourceTree = "<group>"; };
 		CEC3656D293AC42800F2A646 /* SelectColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorViewController.swift; sourceTree = "<group>"; };
 		CEC41662293421CF006AD353 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		CEC43EA3293DEF7B00847B56 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
+		CEC43EA5293DFA7B00847B56 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		CEC513392938B19C00305FE0 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEC5133A2938B19C00305FE0 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		CECD00202930257D002D610A /* money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = money.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +128,18 @@
 				CEFF2BA329342DFD008C3D1E /* OperationTableViewCell.xib */,
 			);
 			path = "Operation Cell";
+			sourceTree = "<group>";
+		};
+		CE5FE58C293D530400BD5E72 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CE5FE58D293D54D000BD5E72 /* CategoriesViewController.swift */,
+				CE5FE58F293D689F00BD5E72 /* IncomeCategoriesViewController.swift */,
+				CE5FE591293D6C5200BD5E72 /* WasteCategoriesViewController.swift */,
+				CEC43EA3293DEF7B00847B56 /* CategoryDetailViewController.swift */,
+				CEC43EA5293DFA7B00847B56 /* EditCategoryViewController.swift */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		CE8FE51E2931802E007ADA6B /* XIB */ = {
@@ -207,8 +229,8 @@
 				CEFEC2DD2934C0F20036EFE1 /* Operation */,
 				CEC41661293421B7006AD353 /* Account */,
 				CEFEC2DE2934C1030036EFE1 /* IncomeViewController.swift */,
-				CEFEC2E229356F850036EFE1 /* SelectAccountsViewController.swift */,
 				CEABBC7E2936B6C50097C60D /* WasteViewController.swift */,
+				CEFEC2E229356F850036EFE1 /* SelectAccountsViewController.swift */,
 				CEECAAB829380E5C00EB7C6C /* Settings */,
 			);
 			path = Controller;
@@ -255,6 +277,7 @@
 		CEECAAB829380E5C00EB7C6C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CE5FE58C293D530400BD5E72 /* Categories */,
 				CEABBC802936C1F80097C60D /* SettingsViewController.swift */,
 				CEABBC822936C9090097C60D /* CurrencyViewController.swift */,
 				CEECAAB629380E5600EB7C6C /* CategoryViewController.swift */,
@@ -370,7 +393,10 @@
 				CEABBC7F2936B6C50097C60D /* WasteViewController.swift in Sources */,
 				CECD00282930257D002D610A /* MainViewController.swift in Sources */,
 				CEFF2BA929343BB0008C3D1E /* OperationDetailViewController.swift in Sources */,
+				CEC43EA4293DEF7B00847B56 /* CategoryDetailViewController.swift in Sources */,
 				CE8FE525293183AC007ADA6B /* AccountDetailViewController.swift in Sources */,
+				CEC43EA6293DFA7B00847B56 /* EditCategoryViewController.swift in Sources */,
+				CE5FE592293D6C5200BD5E72 /* WasteCategoriesViewController.swift in Sources */,
 				CEC3656E293AC42800F2A646 /* SelectColorViewController.swift in Sources */,
 				CEECAAB5293808AE00EB7C6C /* AccountCounter.swift in Sources */,
 				CECD00242930257D002D610A /* AppDelegate.swift in Sources */,
@@ -380,6 +406,8 @@
 				CEFEC2E329356F850036EFE1 /* SelectAccountsViewController.swift in Sources */,
 				CE1FFD222930D1A200D9435B /* AccountData.swift in Sources */,
 				CE8FE52729319485007ADA6B /* EditAccountViewController.swift in Sources */,
+				CE5FE58E293D54D000BD5E72 /* CategoriesViewController.swift in Sources */,
+				CE5FE590293D689F00BD5E72 /* IncomeCategoriesViewController.swift in Sources */,
 				CEFEC2E82935787E0036EFE1 /* CategoryData.swift in Sources */,
 				CEFF2BA429342DFD008C3D1E /* OperationTableViewCell.swift in Sources */,
 				CEBFAA332930CEF4003D0162 /* OperationData.swift in Sources */,
@@ -551,7 +579,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -583,7 +611,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

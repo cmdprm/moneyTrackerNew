@@ -11,7 +11,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let cells = ["Add Category", "Currency", "Data restore", "About"]
+    let cells = ["Categories", "Currency", "Data restore", "About"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

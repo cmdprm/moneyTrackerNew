@@ -11,6 +11,7 @@ class OperationsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var selSectionOfOpertaion: Int = 0
     var selIndexOfOperation: Int = 0
     
     override func viewDidLoad() {
@@ -32,18 +33,35 @@ class OperationsViewController: UIViewController {
 
 extension OperationsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selSectionOfOpertaion = indexPath.section
         self.selIndexOfOperation = indexPath.row
         performSegue(withIdentifier: "OperationDetail", sender: self)
     }
 }
 
 extension OperationsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return operations.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if let firstOperationInSection = operations[section].first {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            let dateString = dateFormatter.string(from: firstOperationInSection.date)
+            return "\(dateString)"
+        }
+        
+        return "Section: \(section)"
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return operations[section].count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let operation = operations[indexPath.row]
+        let operation = operations[indexPath.section][indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "OperationReusableCell", for: indexPath) as! OperationTableViewCell
 

@@ -21,18 +21,22 @@ class OperationDetailViewController: UIViewController {
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    var selSectionOfOpertaion: Int = 0
     var indexOfOperation: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         backView.layer.cornerRadius = 15
+        backView.backgroundColor = UIColor(named: "Color 1")
+        
         imageView.layer.cornerRadius = imageView.layer.bounds.height / 2
         imageView.clipsToBounds = true
         
         dataView.layer.cornerRadius = 15
+        dataView.backgroundColor = UIColor(named: "Color 1")
         
-        let operation = operations[indexOfOperation]
+        let operation = operations[selSectionOfOpertaion][indexOfOperation]
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium

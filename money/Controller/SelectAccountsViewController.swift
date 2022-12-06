@@ -30,7 +30,7 @@ class SelectAccountsViewController: UIViewController {
 extension SelectAccountsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.sendAccount(account: accounts[indexPath.row], index: indexPath.row)
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
 }
 
@@ -46,9 +46,9 @@ extension SelectAccountsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AccountReusableCell", for: indexPath) as! AccountTableViewCell
         
         if account.isMain == true {
-            cell.backView.backgroundColor = .gray
+            cell.crownImage.isHidden = false
         } else {
-            cell.backView.backgroundColor = UIColor(red: 0.35, green: 0.38, blue: 0.46, alpha: 1.00)
+            cell.crownImage.isHidden = true
         }
         
         cell.nameLabel.text = account.name

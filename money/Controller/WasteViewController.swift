@@ -27,7 +27,7 @@ class WasteViewController: UIViewController, AccountPassingDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         saveView.layer.cornerRadius = 15
         
         saveButton.layer.cornerRadius = 15
@@ -48,14 +48,10 @@ class WasteViewController: UIViewController, AccountPassingDelegate {
         }
         
         accountNameLabel.text = "Account: \(primaryAccount!.name)"
-
+        
         tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryReusableCell")
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        accountNameLabel.text = "Account: \(primaryAccount!.name)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,6 +69,7 @@ class WasteViewController: UIViewController, AccountPassingDelegate {
     func sendAccount(account: Account, index: Int) {
         self.indexOfAccount = index
         self.primaryAccount = account
+        self.accountNameLabel.text = "Account: \(primaryAccount!.name)"
     }
     
     func getWarningAlert(message: String) -> UIAlertController {
@@ -99,7 +96,19 @@ class WasteViewController: UIViewController, AccountPassingDelegate {
                     let rightAmount = amount!.replacingOccurrences(of: ",", with: ".")
                     
                     let newOper = Operation(title: name!, category: catOfWastes[selectedCategory!], date: Date(), amount: Float(rightAmount)!, status: 0, account: primaryAccount!.name)
-                    operations.insert(newOper, at: 0)
+                    
+                    if let firstOperOfFirstSection = operations[0].first {
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateStyle = .short
+                        let lastDate = dateFormatter.string(from: firstOperOfFirstSection.date)
+                        let newDate = dateFormatter.string(from: newOper.date)
+                        
+                        if lastDate == newDate {
+                            operations[0].insert(newOper, at: 0)
+                        } else {
+                            operations.insert([newOper], at: 0)
+                        }
+                    }
                     
                     counter.calculate(operation: newOper, index: indexOfAccount!)
                     
@@ -138,6 +147,8 @@ extension WasteViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryReusableCell", for: indexPath) as! CategoryTableViewCell
 
+        cell.categoryView.layer.cornerRadius = 8
+        
         cell.iconView.backgroundColor = category.color
         cell.iconImage.image = UIImage(systemName: category.icon)
         cell.categoryLabel.text = category.name

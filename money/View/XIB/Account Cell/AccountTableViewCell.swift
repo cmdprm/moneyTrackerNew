@@ -12,6 +12,7 @@ class AccountTableViewCell: UITableViewCell {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var crownImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +22,11 @@ class AccountTableViewCell: UITableViewCell {
         backView.layer.shadowColor = UIColor.gray.cgColor
         backView.layer.shadowOpacity = 0.2
         backView.layer.shadowRadius = 5
+        
+        backView.backgroundColor = UIColor(named: "Color 1")
+        
+        crownImage.isHidden = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
