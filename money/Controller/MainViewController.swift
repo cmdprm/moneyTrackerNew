@@ -51,32 +51,18 @@ class MainViewController: UIViewController {
         layout.setLayout(button: wasteButton, view: wasteView, isMain: true)
         layout.setLayout(button: settingsButton, view: settingsView, isMain: true)
         
-        var primaryAccount = accounts[0]
+        setupPrimaryAccount()
         
-        for account in accounts {
-            if account.isMain == true {
-                primaryAccount = account
-            }
-        }
-        
-        accountNameLabel.text = "\(primaryAccount.name) Account"
-        accountAmountLabel.text = "\(primaryAccount.balance)\(currency)"
-        
-        let lastOperation = operations[0][0]
-        
-        operationNameLabel.text = "\(lastOperation.title)"
-        
-        if lastOperation.status == 0 {
-            operationBalanceLabel.textColor = UIColor(red: 0.85, green: 0.26, blue: 0.08, alpha: 1.00)
-            operationBalanceLabel.text = "-\(lastOperation.amount)\(currency)"
-        } else {
-            operationBalanceLabel.textColor = UIColor(red: 0.18, green: 0.49, blue: 0.20, alpha: 1.00)
-            operationBalanceLabel.text = "+\(lastOperation.amount)\(currency)"
-        }
+        setupLastOperation(lastOperation: operations[0][0])
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        setupPrimaryAccount()
+
+        setupLastOperation(lastOperation: operations[0][0])
+    }
+    
+    func setupPrimaryAccount() {
         var primaryAccount = accounts[0]
         
         for account in accounts {
@@ -85,11 +71,15 @@ class MainViewController: UIViewController {
             }
         }
         
+        changeLabels(primaryAccount: primaryAccount)
+    }
+    
+    func changeLabels(primaryAccount: Account) {
         accountNameLabel.text = "\(primaryAccount.name) Account"
         accountAmountLabel.text = "\(primaryAccount.balance)\(currency)"
-        
-        let lastOperation = operations[0][0]
-        
+    }
+    
+    func setupLastOperation(lastOperation: Operation) {
         operationNameLabel.text = "\(lastOperation.title)"
         
         if lastOperation.status == 0 {
