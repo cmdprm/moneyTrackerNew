@@ -14,15 +14,14 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var addNewView: UIView!
     @IBOutlet weak var addNewButton: UIButton!
     
+    var layout = SetupLayout()
+    
     var selIndexOfAccount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addNewView.layer.cornerRadius = 15
-        
-        addNewButton.layer.cornerRadius = 15
-        addNewButton.setTitle("", for: .normal)
+        layout.setLayout(button: addNewButton, view: addNewView)
 
         tableView.register(UINib(nibName: "AccountTableViewCell", bundle: nil), forCellReuseIdentifier: "AccountReusableCell")
         tableView.delegate = self

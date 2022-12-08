@@ -15,15 +15,14 @@ class AddAccountViewController: UIViewController {
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
+    var layout = SetupLayout()
+    
     let vibration = UIImpactFeedbackGenerator(style: .heavy)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        saveView.layer.cornerRadius = 15
-        
-        saveButton.layer.cornerRadius = 15
-        saveButton.setTitle("", for: .normal)
+        layout.setLayout(button: saveButton, view: saveView)
     }
 
     @IBAction func tapped(_ sender: Any) {

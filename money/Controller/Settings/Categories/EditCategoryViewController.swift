@@ -14,16 +14,15 @@ class EditCategoryViewController: UIViewController {
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
+    var layout = SetupLayout()
+    
     var typeOfCategory: String?
     var selectedIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        saveView.layer.cornerRadius = 15
         
-        saveButton.layer.cornerRadius = 15
-        saveButton.setTitle("", for: .normal)
+        layout.setLayout(button: saveButton, view: saveView)
         
         if typeOfCategory == "Income" {
             let category = catOfIncomes[selectedIndex!]

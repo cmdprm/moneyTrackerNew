@@ -21,6 +21,9 @@ class WasteViewController: UIViewController, AccountPassingDelegate {
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
+    var layout = SetupLayout()
+    var alert = WarningAlert()
+    
     var primaryAccount: Account?
     var indexOfAccount: Int?
     var selectedCategory: Int?
@@ -28,15 +31,8 @@ class WasteViewController: UIViewController, AccountPassingDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        saveView.layer.cornerRadius = 15
-        
-        saveButton.layer.cornerRadius = 15
-        saveButton.setTitle("", for: .normal)
-        
-        accountView.layer.cornerRadius = 15
-        
-        accountButton.layer.cornerRadius = 15
-        accountButton.setTitle("", for: .normal)
+        layout.setLayout(button: saveButton, view: saveView)
+        layout.setLayout(button: accountButton, view: accountView)
         
         amountField.keyboardType = .decimalPad
         
@@ -70,14 +66,6 @@ class WasteViewController: UIViewController, AccountPassingDelegate {
         self.indexOfAccount = index
         self.primaryAccount = account
         self.accountNameLabel.text = "Account: \(primaryAccount!.name)"
-    }
-    
-    func getWarningAlert(message: String) -> UIAlertController {
-        let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okButton)
-        
-        return alert
     }
     
     @IBAction func accountButtonPressed(_ sender: Any) {
@@ -115,13 +103,13 @@ class WasteViewController: UIViewController, AccountPassingDelegate {
                     self.navigationController?.popViewController(animated: true)
                     
                 } else {
-                    present(getWarningAlert(message: "Please, select a category!"), animated: true)
+                    present(alert.getWarningAlert(message: "Please, select a category!"), animated: true)
                 }
             } else {
-                present(getWarningAlert(message: "Please, enter an amount!"), animated: true)
+                present(alert.getWarningAlert(message: "Please, enter an amount!"), animated: true)
             }
         } else {
-            present(getWarningAlert(message: "Please, enter a name!"), animated: true)
+            present(alert.getWarningAlert(message: "Please, enter a name!"), animated: true)
         }
         
     }

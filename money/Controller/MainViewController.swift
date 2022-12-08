@@ -35,22 +35,21 @@ class MainViewController: UIViewController {
     @IBOutlet weak var settingsView: UIView!
     @IBOutlet weak var settingsButton: UIButton!
     
+    var layout = SetupLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Background")
-        
-        /// Account Setup
-        accountView.layer.cornerRadius = accountView.frame.height / 8
-        
-        accountView.layer.shadowColor = UIColor.gray.cgColor
-        accountView.layer.shadowOpacity = 0.2
-        accountView.layer.shadowRadius = 5
-        
+
         accountView.backgroundColor = UIColor(named: "Color 1")
+        lastOperationView.backgroundColor = UIColor(named: "Color 1")
+        settingsView.backgroundColor = UIColor(named: "Color 2")
         
-        accountButton.layer.cornerRadius = accountButton.frame.height / 8
-        accountButton.setTitle("", for: .normal)
+        layout.setLayout(button: accountButton, view: accountView, isMain: true)
+        layout.setLayout(button: lastOperationButton, view: lastOperationView, isMain: true)
+        layout.setLayout(button: incomeButton, view: incomeView, isMain: true)
+        layout.setLayout(button: wasteButton, view: wasteView, isMain: true)
+        layout.setLayout(button: settingsButton, view: settingsView, isMain: true)
         
         var primaryAccount = accounts[0]
         
@@ -62,18 +61,6 @@ class MainViewController: UIViewController {
         
         accountNameLabel.text = "\(primaryAccount.name) Account"
         accountAmountLabel.text = "\(primaryAccount.balance)\(currency)"
-        
-        /// Operation Setup
-        lastOperationView.layer.cornerRadius = lastOperationView.frame.height / 8
-        
-        lastOperationView.layer.shadowColor = UIColor.gray.cgColor
-        lastOperationView.layer.shadowOpacity = 0.2
-        lastOperationView.layer.shadowRadius = 5
-        
-        lastOperationView.backgroundColor = UIColor(named: "Color 1")
-        
-        lastOperationButton.layer.cornerRadius = lastOperationButton.frame.height / 8
-        lastOperationButton.setTitle("", for: .normal)
         
         let lastOperation = operations[0][0]
         
@@ -86,44 +73,10 @@ class MainViewController: UIViewController {
             operationBalanceLabel.textColor = UIColor(red: 0.18, green: 0.49, blue: 0.20, alpha: 1.00)
             operationBalanceLabel.text = "+\(lastOperation.amount)\(currency)"
         }
-        
-        /// Income Setup
-        incomeView.layer.cornerRadius = incomeView.frame.height / 8
-        
-        incomeView.layer.shadowColor = UIColor.gray.cgColor
-        incomeView.layer.shadowOpacity = 0.2
-        incomeView.layer.shadowRadius = 5
-        
-        incomeButton.layer.cornerRadius = lastOperationButton.frame.height / 8
-        incomeButton.setTitle("", for: .normal)
-        
-        /// Waste Setup
-        wasteView.layer.cornerRadius = incomeView.frame.height / 8
-        
-        wasteView.layer.shadowColor = UIColor.gray.cgColor
-        wasteView.layer.shadowOpacity = 0.2
-        wasteView.layer.shadowRadius = 5
-        
-        wasteButton.layer.cornerRadius = lastOperationButton.frame.height / 8
-        wasteButton.setTitle("", for: .normal)
-        
-        /// Settings Setup
-        settingsView.layer.cornerRadius = settingsView.frame.height / 8
-        
-        settingsView.layer.shadowColor = UIColor.gray.cgColor
-        settingsView.layer.shadowOpacity = 0.2
-        settingsView.layer.shadowRadius = 5
-        
-        settingsView.backgroundColor = UIColor(named: "Color 2")
-        
-        settingsButton.layer.cornerRadius = lastOperationButton.frame.height / 8
-        settingsButton.setTitle("", for: .normal)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-        /// Account
         var primaryAccount = accounts[0]
         
         for account in accounts {
@@ -135,7 +88,6 @@ class MainViewController: UIViewController {
         accountNameLabel.text = "\(primaryAccount.name) Account"
         accountAmountLabel.text = "\(primaryAccount.balance)\(currency)"
         
-        /// LastOperation
         let lastOperation = operations[0][0]
         
         operationNameLabel.text = "\(lastOperation.title)"
@@ -149,12 +101,10 @@ class MainViewController: UIViewController {
         }
     }
 
-    /// Account Actions
     @IBAction func accountPressed(_ sender: Any) {
         performSegue(withIdentifier: "Account", sender: self)
     }
     
-    /// Operation Actions
     @IBAction func operationPressed(_ sender: Any) {
         performSegue(withIdentifier: "Operations", sender: self)
     }

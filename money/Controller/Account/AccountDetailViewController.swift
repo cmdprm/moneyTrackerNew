@@ -30,6 +30,8 @@ class AccountDetailViewController: UIViewController {
     @IBOutlet weak var deleteIconImage: UIImageView!
     @IBOutlet weak var deleteButtonLabel: UILabel!
     
+    var layout = SetupLayout()
+    
     var indexOfAccount: Int = 0
     
     let vibration = UIImpactFeedbackGenerator(style: .heavy)
@@ -37,23 +39,9 @@ class AccountDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /// Edit Setup
-        editView.layer.cornerRadius = 15
-        
-        editButton.layer.cornerRadius = 15
-        editButton.setTitle("", for: .normal)
-        
-        /// Primary Setup
-        primaryView.layer.cornerRadius = 15
-        
-        primaryButton.layer.cornerRadius = 15
-        primaryButton.setTitle("", for: .normal)
-        
-        /// Delete Setup
-        deleteView.layer.cornerRadius = 15
-        
-        deleteButton.layer.cornerRadius = 15
-        deleteButton.setTitle("", for: .normal)
+        layout.setLayout(button: editButton, view: editView)
+        layout.setLayout(button: primaryButton, view: primaryView)
+        layout.setLayout(button: deleteButton, view: deleteView)
         
         let account = accounts[indexOfAccount]
 

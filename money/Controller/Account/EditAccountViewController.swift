@@ -15,6 +15,8 @@ class EditAccountViewController: UIViewController {
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
+    var layout = SetupLayout()
+    
     let vibration = UIImpactFeedbackGenerator(style: .heavy)
     
     var indexOfAccount: Int = 0
@@ -23,11 +25,8 @@ class EditAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        saveView.layer.cornerRadius = 15
         
-        saveButton.layer.cornerRadius = 15
-        saveButton.setTitle("", for: .normal)
+        layout.setLayout(button: saveButton, view: saveView)
         
         let account = accounts[indexOfAccount]
         

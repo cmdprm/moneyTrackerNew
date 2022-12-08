@@ -30,6 +30,9 @@ class CategoryViewController: UIViewController, SelectIconDelegate, SelectColorD
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
+    var layout = SetupLayout()
+    var alert = WarningAlert()
+    
     var iconIndex: Int?
     var colorIndex: Int?
     
@@ -39,19 +42,15 @@ class CategoryViewController: UIViewController, SelectIconDelegate, SelectColorD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        iconView.layer.cornerRadius = 15
-        
-        iconButton.layer.cornerRadius = 15
-        iconButton.setTitle("", for: .normal)
+        layout.setLayout(button: iconButton, view: iconView)
+        layout.setLayout(button: colorButton, view: colorView)
+        layout.setLayout(button: incomeButton, view: incomeView)
+        layout.setLayout(button: wasteButton, view: wasteView)
+        layout.setLayout(button: saveButton, view: saveView)
         
         if iconIndex == nil {
             iconImage.isHidden = true
         }
-        
-        colorView.layer.cornerRadius = 15
-        
-        colorButton.layer.cornerRadius = 15
-        colorButton.setTitle("", for: .normal)
         
         selColorView.layer.cornerRadius = selColorView.layer.bounds.width / 2
         selColorView.clipsToBounds = true
@@ -59,21 +58,6 @@ class CategoryViewController: UIViewController, SelectIconDelegate, SelectColorD
         if colorIndex == nil {
             selColorView.isHidden = true
         }
-        
-        incomeView.layer.cornerRadius = 15
-        
-        incomeButton.layer.cornerRadius = 15
-        incomeButton.setTitle("", for: .normal)
-        
-        wasteView.layer.cornerRadius = 15
-        
-        wasteButton.layer.cornerRadius = 15
-        wasteButton.setTitle("", for: .normal)
-        
-        saveView.layer.cornerRadius = 15
-        
-        saveButton.layer.cornerRadius = 15
-        saveButton.setTitle("", for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,14 +96,6 @@ class CategoryViewController: UIViewController, SelectIconDelegate, SelectColorD
     
     func transferColorIndex(index: Int) {
         self.colorIndex = index
-    }
-    
-    func getWarningAlert(message: String) -> UIAlertController {
-        let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okButton)
-        
-        return alert
     }
 
     @IBAction func iconPressed(_ sender: Any) {
@@ -162,7 +138,7 @@ class CategoryViewController: UIViewController, SelectIconDelegate, SelectColorD
             if icon != nil {
                 if color != nil {
                     if isIncomeSelected == false && isWasteSelected == false {
-                        present(getWarningAlert(message: "Please, select a type of category!"), animated: true)
+                        present(alert.getWarningAlert(message: "Please, select a type of category!"), animated: true)
                     } else {
                         if isIncomeSelected == true {
                             status = 1
@@ -184,13 +160,13 @@ class CategoryViewController: UIViewController, SelectIconDelegate, SelectColorD
                         
                     }
                 } else {
-                    present(getWarningAlert(message: "Please, select a color!"), animated: true)
+                    present(alert.getWarningAlert(message: "Please, select a color!"), animated: true)
                 }
             } else {
-                present(getWarningAlert(message: "Please, select a icon!"), animated: true)
+                present(alert.getWarningAlert(message: "Please, select a icon!"), animated: true)
             }
         } else {
-            present(getWarningAlert(message: "Please, enter a name!"), animated: true)
+            present(alert.getWarningAlert(message: "Please, enter a name!"), animated: true)
         }
         
     }

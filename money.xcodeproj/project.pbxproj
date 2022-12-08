@@ -36,6 +36,8 @@
 		CECD002B2930257D002D610A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECD00292930257D002D610A /* Main.storyboard */; };
 		CECD002D2930257E002D610A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECD002C2930257E002D610A /* Assets.xcassets */; };
 		CECD00302930257E002D610A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECD002E2930257E002D610A /* LaunchScreen.storyboard */; };
+		CED581CF294290920051444B /* SetupLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED581CE294290920051444B /* SetupLayout.swift */; };
+		CED581D12942A0EA0051444B /* WarningAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED581D02942A0EA0051444B /* WarningAlert.swift */; };
 		CEDBA63C29381074008462A2 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBA63A29381074008462A2 /* IconCollectionViewCell.swift */; };
 		CEDBA63D29381074008462A2 /* IconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDBA63B29381074008462A2 /* IconCollectionViewCell.xib */; };
 		CEECAAB5293808AE00EB7C6C /* AccountCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECAAB4293808AE00EB7C6C /* AccountCounter.swift */; };
@@ -84,6 +86,8 @@
 		CECD002C2930257E002D610A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECD002F2930257E002D610A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECD00312930257E002D610A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED581CE294290920051444B /* SetupLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupLayout.swift; sourceTree = "<group>"; };
+		CED581D02942A0EA0051444B /* WarningAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningAlert.swift; sourceTree = "<group>"; };
 		CEDBA63A29381074008462A2 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEDBA63B29381074008462A2 /* IconCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconCollectionViewCell.xib; sourceTree = "<group>"; };
 		CEECAAB4293808AE00EB7C6C /* AccountCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCounter.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				CEABBC7E2936B6C50097C60D /* WasteViewController.swift */,
 				CEFEC2E229356F850036EFE1 /* SelectAccountsViewController.swift */,
 				CEECAAB829380E5C00EB7C6C /* Settings */,
+				CED581CE294290920051444B /* SetupLayout.swift */,
+				CED581D02942A0EA0051444B /* WarningAlert.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				CEFEC2E5293577EE0036EFE1 /* Category.swift in Sources */,
 				CEFEC2E329356F850036EFE1 /* SelectAccountsViewController.swift in Sources */,
 				CE1FFD222930D1A200D9435B /* AccountData.swift in Sources */,
+				CED581CF294290920051444B /* SetupLayout.swift in Sources */,
 				CE8FE52729319485007ADA6B /* EditAccountViewController.swift in Sources */,
 				CE5FE58E293D54D000BD5E72 /* CategoriesViewController.swift in Sources */,
 				CE5FE590293D689F00BD5E72 /* IncomeCategoriesViewController.swift in Sources */,
@@ -419,6 +426,7 @@
 				CEDBA63C29381074008462A2 /* IconCollectionViewCell.swift in Sources */,
 				CEBFAA312930CE4F003D0162 /* Operation.swift in Sources */,
 				CEFEC2EC29357CCB0036EFE1 /* CategoryTableViewCell.swift in Sources */,
+				CED581D12942A0EA0051444B /* WarningAlert.swift in Sources */,
 				CEC41663293421CF006AD353 /* AddAccountViewController.swift in Sources */,
 				CEECAAB729380E5600EB7C6C /* CategoryViewController.swift in Sources */,
 				CEFF2BA729343018008C3D1E /* OperationsViewController.swift in Sources */,

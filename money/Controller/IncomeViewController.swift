@@ -21,22 +21,18 @@ class IncomeViewController: UIViewController, AccountPassingDelegate {
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
+    var layout = SetupLayout()
+    var alert = WarningAlert()
+    
     var primaryAccount: Account?
     var indexOfAccount: Int?
     var selectedCategory: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        saveView.layer.cornerRadius = 15
         
-        saveButton.layer.cornerRadius = 15
-        saveButton.setTitle("", for: .normal)
-        
-        accountView.layer.cornerRadius = 15
-        
-        accountButton.layer.cornerRadius = 15
-        accountButton.setTitle("", for: .normal)
+        layout.setLayout(button: saveButton, view: saveView)
+        layout.setLayout(button: accountButton, view: accountView)
         
         amountField.keyboardType = .decimalPad
         
@@ -72,14 +68,6 @@ class IncomeViewController: UIViewController, AccountPassingDelegate {
         self.accountNameLabel.text = "Account: \(primaryAccount!.name)"
     }
     
-    func getWarningAlert(message: String) -> UIAlertController {
-        let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okButton)
-        
-        return alert
-    }
-    
     @IBAction func accountButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "IncomeAccounts", sender: self)
     }
@@ -98,6 +86,7 @@ class IncomeViewController: UIViewController, AccountPassingDelegate {
                     let newOper = Operation(title: name!, category: catOfIncomes[selectedCategory!], date: Date(), amount: Float(rightAmount)!, status: 1, account: primaryAccount!.name)
                     
                     if let firstOperOfFirstSection = operations[0].first {
+                        
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateStyle = .short
                         let lastDate = dateFormatter.string(from: firstOperOfFirstSection.date)
@@ -115,13 +104,13 @@ class IncomeViewController: UIViewController, AccountPassingDelegate {
                     self.navigationController?.popViewController(animated: true)
                     
                 } else {
-                    present(getWarningAlert(message: "Please, select a category!"), animated: true)
+                    present(alert.getWarningAlert(message: "Please, select a category!"), animated: true)
                 }
             } else {
-                present(getWarningAlert(message: "Please, enter an amount!"), animated: true)
+                present(alert.getWarningAlert(message: "Please, enter an amount!"), animated: true)
             }
         } else {
-            present(getWarningAlert(message: "Please, enter a name!"), animated: true)
+            present(alert.getWarningAlert(message: "Please, enter a name!"), animated: true)
         }
         
     }

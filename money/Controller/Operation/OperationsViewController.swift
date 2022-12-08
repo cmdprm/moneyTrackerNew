@@ -25,6 +25,7 @@ class OperationsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OperationDetail" {
             let operVC = segue.destination as! OperationDetailViewController
+            operVC.selSectionOfOpertaion = self.selSectionOfOpertaion
             operVC.indexOfOperation = self.selIndexOfOperation
         }
     }

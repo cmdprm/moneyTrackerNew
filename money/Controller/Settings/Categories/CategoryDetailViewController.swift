@@ -20,25 +20,19 @@ class CategoryDetailViewController: UIViewController {
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var deleteButton: UIButton!
     
+    var layout = SetupLayout()
+    
     var typeOfCategory: String?
     var selectedIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        layout.setLayout(button: editButton, view: editView)
+        layout.setLayout(button: deleteButton, view: deleteView)
 
         iconView.layer.cornerRadius = iconView.layer.bounds.height / 2
         iconView.clipsToBounds = true
-        
-        editView.layer.cornerRadius = 15
-        
-        editButton.layer.cornerRadius = 15
-        editButton.setTitle("", for: .normal)
-
-        deleteView.layer.cornerRadius = 15
-        
-        deleteButton.layer.cornerRadius = 15
-        deleteButton.setTitle("", for: .normal)
-        
         
         if typeOfCategory == "Income" {
             let category = catOfIncomes[selectedIndex!]
