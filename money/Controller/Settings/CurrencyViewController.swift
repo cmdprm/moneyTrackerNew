@@ -11,6 +11,8 @@ class CurrencyViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var currency = SetupCurrency()
+    
     let cells = ["$ - Dollars", "€ - Euros", "₴ - Ukrainian hryvnia", "RUB - Russian Rubles", "BYN - Belarussian Rubles"]
 
     override func viewDidLoad() {
@@ -24,26 +26,9 @@ class CurrencyViewController: UIViewController {
 
 extension CurrencyViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            currency = "$"
-            self.navigationController?.popToRootViewController(animated: true)
-        case 1:
-            currency = "€"
-            self.navigationController?.popToRootViewController(animated: true)
-        case 2:
-            currency = "₴"
-            self.navigationController?.popToRootViewController(animated: true)
-        case 3:
-            currency = "RUB"
-            self.navigationController?.popToRootViewController(animated: true)
-        case 4:
-            currency = "BYN"
-            self.navigationController?.popToRootViewController(animated: true)
-        default:
-            currency = "$"
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        currency.setupCurrency(index: indexPath.row)
+        
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 

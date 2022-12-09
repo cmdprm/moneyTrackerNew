@@ -24,6 +24,7 @@
 		CEBFAA332930CEF4003D0162 /* OperationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFAA322930CEF4003D0162 /* OperationData.swift */; };
 		CEC121202943C4340018CAAF /* SetupDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1211F2943C4340018CAAF /* SetupDate.swift */; };
 		CEC121222943E29F0018CAAF /* NewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC121212943E29F0018CAAF /* NewCategory.swift */; };
+		CEC121252943E4570018CAAF /* SetupCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC121242943E4570018CAAF /* SetupCurrency.swift */; };
 		CEC3656A293ABD3500F2A646 /* NewCategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC36569293ABD3500F2A646 /* NewCategoryData.swift */; };
 		CEC3656C293ABE1F00F2A646 /* SelectIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3656B293ABE1F00F2A646 /* SelectIconViewController.swift */; };
 		CEC3656E293AC42800F2A646 /* SelectColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3656D293AC42800F2A646 /* SelectColorViewController.swift */; };
@@ -74,6 +75,7 @@
 		CEBFAA322930CEF4003D0162 /* OperationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationData.swift; sourceTree = "<group>"; };
 		CEC1211F2943C4340018CAAF /* SetupDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDate.swift; sourceTree = "<group>"; };
 		CEC121212943E29F0018CAAF /* NewCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategory.swift; sourceTree = "<group>"; };
+		CEC121242943E4570018CAAF /* SetupCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCurrency.swift; sourceTree = "<group>"; };
 		CEC36569293ABD3500F2A646 /* NewCategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryData.swift; sourceTree = "<group>"; };
 		CEC3656B293ABE1F00F2A646 /* SelectIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIconViewController.swift; sourceTree = "<group>"; };
 		CEC3656D293AC42800F2A646 /* SelectColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				CED581D02942A0EA0051444B /* WarningAlert.swift */,
 				CEC1211F2943C4340018CAAF /* SetupDate.swift */,
 				CEC121212943E29F0018CAAF /* NewCategory.swift */,
+				CEC121242943E4570018CAAF /* SetupCurrency.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				CEC3656A293ABD3500F2A646 /* NewCategoryData.swift in Sources */,
 				CEABBC812936C1F80097C60D /* SettingsViewController.swift in Sources */,
 				CEC5133B2938B19C00305FE0 /* ColorCollectionViewCell.swift in Sources */,
+				CEC121252943E4570018CAAF /* SetupCurrency.swift in Sources */,
 				CECD00262930257D002D610A /* SceneDelegate.swift in Sources */,
 				CE8FE52229318053007ADA6B /* AccountTableViewCell.swift in Sources */,
 				CEDBA63C29381074008462A2 /* IconCollectionViewCell.swift in Sources */,
