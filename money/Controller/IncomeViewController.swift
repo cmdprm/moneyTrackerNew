@@ -23,6 +23,7 @@ class IncomeViewController: UIViewController, AccountPassingDelegate {
     
     var layout = SetupLayout()
     var alert = WarningAlert()
+    var date = SetupDate()
     
     var primaryAccount: Account?
     var indexOfAccount: Int?
@@ -85,19 +86,7 @@ class IncomeViewController: UIViewController, AccountPassingDelegate {
                     
                     let newOper = Operation(title: name!, category: catOfIncomes[selectedCategory!], date: Date(), amount: Float(rightAmount)!, status: 1, account: primaryAccount!.name)
                     
-                    if let firstOperOfFirstSection = operations[0].first {
-                        
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateStyle = .short
-                        let lastDate = dateFormatter.string(from: firstOperOfFirstSection.date)
-                        let newDate = dateFormatter.string(from: newOper.date)
-                        
-                        if lastDate == newDate {
-                            operations[0].insert(newOper, at: 0)
-                        } else {
-                            operations.insert([newOper], at: 0)
-                        }
-                    }
+                    date.setupDate(newOper: newOper)
                     
                     counter.calculate(operation: newOper, index: indexOfAccount!)
                     
