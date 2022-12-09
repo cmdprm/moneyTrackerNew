@@ -32,6 +32,7 @@ class CategoryViewController: UIViewController, SelectIconDelegate, SelectColorD
     
     var layout = SetupLayout()
     var alert = WarningAlert()
+    var category = NewCategory()
     
     var iconIndex: Int?
     var colorIndex: Int?
@@ -132,32 +133,21 @@ class CategoryViewController: UIViewController, SelectIconDelegate, SelectColorD
         let icon = iconIndex
         let color = colorIndex
         
-        var status: Int?
-        
         if name != "" {
             if icon != nil {
                 if color != nil {
                     if isIncomeSelected == false && isWasteSelected == false {
                         present(alert.getWarningAlert(message: "Please, select a type of category!"), animated: true)
                     } else {
-                        if isIncomeSelected == true {
-                            status = 1
-                        } else {
-                            status = 0
-                        }
+                        let newCategory = Category(name: name!, title: name!, icon: icons[icon!], color: colors[color!])
                         
-                        if status == 1 {
-                            let newCategory = Category(name: name!, title: name!, icon: icons[icon!], color: colors[color!])
-                            catOfIncomes.append(newCategory)
-                            self.navigationController?.popToRootViewController(animated: true)
-                        } else if status == 0 {
-                            let newCategory = Category(name: name!, title: name!, icon: icons[icon!], color: colors[color!])
-                            catOfWastes.append(newCategory)
+                        let result = category.addCategory(isIncomeSelected: isIncomeSelected, newCategory: newCategory)
+                        
+                        if result == true {
                             self.navigationController?.popToRootViewController(animated: true)
                         } else {
                             print("Error!")
                         }
-                        
                     }
                 } else {
                     present(alert.getWarningAlert(message: "Please, select a color!"), animated: true)
